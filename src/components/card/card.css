@@ -1,5 +1,51 @@
 .card {
-    width: 350px;
-    height: 200px;
-    background-color: red
+    width: 100%;
+    min-height: 200px;
+    background-color: red;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card > .show {
+    display: none!important;
+}
+
+.card > .before,
+.card > .after {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card > .before > .jp,
+.card > .after > .vn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card > .before > .jp > p.main-txt,
+.card > .after > .vn > p.translate-txt {
+    font-weight: 800;
+    font-size: xx-large;
+}
+
+
+.card > .before > .jp > p.transcript-txt,
+.card > .after > .vn > p.note-txt {
+    font-size:　small;
+    margin: 10px 0;
+}
+
+.card .break-word {
+    white-space: normal; /* Cho phép xuống dòng tự nhiên */
+    word-break: keep-all; /* Không ngắt từ giữa chừng */
+    overflow-wrap: break-word; /* Đảm bảo không bị tràn ra ngoài */
 }

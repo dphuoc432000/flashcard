@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./card.css"
 
-const Card = () => {
+const Card = ({ vocabulary, isShowVn, handleShow }) => {
+    // const [isHidden, setIsHidden] = useState(false);
+
+    // useEffect(() => {
+    //     setIsHidden(false);
+    // }, [vocabulary])
+
+    // const handleHidden = () => {
+    //     setIsHidden(!isHidden);
+    // }
+
     return (
-        <div className="card">
-            <div className="jp-txt">
-                <div className="main-txt">あなた</div>
-                <div className="sub-txt"></div>
+        <div className="card" onClick={()=> {handleShow()}}>
+            <div className={`before${isShowVn ? ' show' : ""}`}>
+                <div className="jp">
+                    <p className="main-txt break-word">{vocabulary.jp.main}</p>
+                    <p className="transcript-txt break-word">{vocabulary.jp.transcript}</p>
+                    <p className="sub-txt break-word">{vocabulary.jp.sub}</p>
+                </div>
             </div>
-            <div className="jp-transcription">anata</div>
-            <div className="jp-translate">Bạn</div>
-            <div className="note">Bạn</div>
+            <div className={`after${!isShowVn ? ' show' : ""}`}>
+                <div className="vn">
+                    <p className="translate-txt break-word">{vocabulary.vn.translate}</p>
+                    <p className="note-txt break-word">{vocabulary.vn.note}</p>
+                </div>
+            </div>
         </div>
     );
 };
