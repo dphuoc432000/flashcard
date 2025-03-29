@@ -2,9 +2,10 @@ import "./App.css";
 import Card from "./components/card/Card";
 import arrowLeftIcon from "./asserts/arrow-left-icon.svg";
 import arrowRightIcon from "./asserts/arrow-right-icon.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import data from "./data/data.json";
+import Header from "./components/header/Header";
 
 function App() {
     if (!sessionStorage.getItem("flashcard-data")) {
@@ -20,6 +21,20 @@ function App() {
         collectionActive.vocabularies[0]
     );
     const [isShowVn, setIsShow] = useState(false);
+
+    useEffect(()=>{
+        setVocabularyActiveIndex(0);
+        setVocabularyActive(collectionActive.vocabularies[0]);
+        setIsShow(false);
+    }, [collectionActive])
+
+    const handleUpdateDataInit = (collections) => {
+        setDataInit(collections);
+    } 
+
+    const handleChangeCollection = (collection) => {
+        setCollectionActive(collection);
+    }
 
     const handleShow = () => {
         setIsShow(!isShowVn);
@@ -47,9 +62,12 @@ function App() {
 
     return (
         <div className='App'>
-            <header>
-                <input type="file" name="" id="" />
-            </header>
+            <Header
+                collections={dataInit}
+                collectionActiveName={collectionActive.collection}
+                handleUpdateCollections={handleUpdateDataInit}
+                handleChangeCollection={handleChangeCollection}
+            />
             <Card
                 vocabulary={vocabularyActive}
                 isShowVn={isShowVn}

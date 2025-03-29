@@ -1,0 +1,48 @@
+header {
+    width: 100vw;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header > .file {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+header > .file > .import > input[type="file"] {
+    display: none;
+}
+header > .file > .import > .btn,
+header > .file > .export > .btn {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #FDFAF6
+}
+
+header > .divide-space {
+    margin: 10px 0;
+}
+
+header > .collections {
+    width: 100%;
+    display: flex;
+    overflow-y: scroll;
+}
+
+header > .collections > .collection {
+    width: 50px;
+    padding: 5px 20px;
+}
+
+header > .collections > .active {
+    background-color: #99BC85;
+}
+
+header > .collections > .collection > p {
+    white-space: nowrap;
+}

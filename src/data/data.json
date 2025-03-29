@@ -25,5 +25,32 @@
                 }
             }
         ]
+    },
+    {
+        "collection": "bài 2",
+        "vocabularies": [
+            {
+                "jp": {
+                    "main": "わたし",
+                    "sub": "私",
+                    "transcript": "watashi"
+                },
+                "vn": {
+                    "translate": "tôi",
+                    "note": "tôi"
+                }
+            },
+            {
+                "jp": {
+                    "main": "どうぞ　よろしく　おねがいします",
+                    "sub": "どうぞ　よろしく　お願いします",
+                    "transcript": "douzo yoroshiku onegaishimasu"
+                },
+                "vn": {
+                    "translate": "Xin chân thành cảm ơn",
+                    "note": ""
+                }
+            }
+        ]
     }
 ]

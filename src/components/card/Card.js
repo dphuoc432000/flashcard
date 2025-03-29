@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from "react";
-import "./card.css"
+import React from "react";
+import "./Card.css"
 
 const Card = ({ vocabulary, isShowVn, handleShow }) => {
-    // const [isHidden, setIsHidden] = useState(false);
-
-    // useEffect(() => {
-    //     setIsHidden(false);
-    // }, [vocabulary])
-
-    // const handleHidden = () => {
-    //     setIsHidden(!isHidden);
-    // }
 
     return (
         <div className="card" onClick={()=> {handleShow()}}>
             <div className={`before${isShowVn ? ' show' : ""}`}>
                 <div className="jp">
                     <p className="main-txt break-word">{vocabulary.jp.main}</p>
-                    <p className="transcript-txt break-word">{vocabulary.jp.transcript}</p>
+                    <p className="transcript-txt break-word">{`(${vocabulary.jp.transcript})`}</p>
                     <p className="sub-txt break-word">{vocabulary.jp.sub}</p>
                 </div>
             </div>
